@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7eZOMI7J18KIeJT8s1eENP8ebxaqOLoQ4mCXz79cOyv19NVheg1CjHL6Fdmu7bLW3qJqShZh3o2EQGk6OSm1EQ==",
+  "dgSpecHash": "2H0vM4ZGQY+slsyyprtzli0Wrp4f8CDaFWoII2LfR891O2HZ//aGlnvoGDEFcOY2y5885aznJ8SLwHAK54rzSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Infrastructure\\Courstick.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\MyCourstick\\MyCourstick\\Infrastructure\\Courstick.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tagir\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\tagir\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

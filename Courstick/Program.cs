@@ -16,7 +16,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSession();
 
-var connection = builder.Configuration.GetConnectionString("DefaultConnection");
+var connection = builder.Configuration["ConnectionStrings:DefaultConnection"];
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(connection));
 
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
