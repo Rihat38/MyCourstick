@@ -1,0 +1,27 @@
+@model Courstick.Dto.CourseDto
+<link rel="stylesheet" href="~/css/uiStyles/modalStyles/defaultModalStyles.css"/>
+
+<div id="modal">
+    <div class="modal-content">
+        <div class="modal_first-row">
+            <h2>
+                Приесоединиться к курсу
+            </h2>
+
+            <button id="modal_close_button">
+                X
+            </button>
+        </div>
+
+        <h2>
+            @Model.Price ₽
+        </h2>
+        
+        <a asp-area="" asp-route-id="@Model.CourseId" asp-controller="Lessons" asp-action="Lessons" class="orange-button big-button">
+            Купить
+        </a>
+    </div>
+</div>
+
+
+
