@@ -3,6 +3,7 @@ using System;
 using Courstick.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Courstick.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220529153933_ChangeBalanceType")]
+    partial class ChangeBalanceType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,6 +37,21 @@ namespace Courstick.Infrastructure.Migrations
                     b.HasIndex("AuthorOfCourseId");
 
                     b.ToTable("AuthorOfCourse");
+                });
+
+            modelBuilder.Entity("CourseUser", b =>
+                {
+                    b.Property<int>("CoursesCourseId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("CoursesCourseId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("CourseUser");
                 });
 
             modelBuilder.Entity("Courstick.Core.Models.Comment", b =>
@@ -450,21 +467,6 @@ namespace Courstick.Infrastructure.Migrations
                     b.ToTable("SubscriptionUser");
                 });
 
-            modelBuilder.Entity("UserAndCourse", b =>
-                {
-                    b.Property<int>("CoursesCourseId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UsersId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("CoursesCourseId", "UsersId");
-
-                    b.HasIndex("UsersId");
-
-                    b.ToTable("UserAndCourse");
-                });
-
             modelBuilder.Entity("AuthorOfCourse", b =>
                 {
                     b.HasOne("Courstick.Core.Models.User", null)
@@ -476,6 +478,21 @@ namespace Courstick.Infrastructure.Migrations
                     b.HasOne("Courstick.Core.Models.Course", null)
                         .WithMany()
                         .HasForeignKey("AuthorOfCourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CourseUser", b =>
+                {
+                    b.HasOne("Courstick.Core.Models.Course", null)
+                        .WithMany()
+                        .HasForeignKey("CoursesCourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Courstick.Core.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -582,21 +599,6 @@ namespace Courstick.Infrastructure.Migrations
                     b.HasOne("Courstick.Core.Models.Subscription", null)
                         .WithMany()
                         .HasForeignKey("SubscriptionsSubscriptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Courstick.Core.Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("UserAndCourse", b =>
-                {
-                    b.HasOne("Courstick.Core.Models.Course", null)
-                        .WithMany()
-                        .HasForeignKey("CoursesCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

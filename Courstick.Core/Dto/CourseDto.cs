@@ -1,5 +1,4 @@
 ﻿using Courstick.Core.Models;
-using Courstick.Views.Profile;
 
 namespace Courstick.Dto;
 
@@ -16,4 +15,6 @@ public class CourseDto
         
     public double Price { get; set; }
     public string SmallDescription { get; set; }
+    
+    public bool IsBought { get; set; }
 }
