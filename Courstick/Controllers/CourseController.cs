@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Courstick.Core.Dto;
 using Courstick.Core.Models;
 using Courstick.Core.Services;
 using Courstick.Dto;

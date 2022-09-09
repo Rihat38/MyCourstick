@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Courstick@localhost" uuid="144c44ef-049e-4256-8abc-a66aaa6af177">
+    <data-source source="LOCAL" name="PostgreSQL - Courstick@127.0.0.1" uuid="77ae7f20-1d7d-45fd-8c20-5e9e6e5b7e86">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/Courstick</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:4350/Courstick</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

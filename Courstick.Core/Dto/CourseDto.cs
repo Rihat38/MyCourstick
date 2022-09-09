@@ -1,6 +1,6 @@
-﻿using Courstick.Core.Models;
+﻿using Courstick.Dto;
 
-namespace Courstick.Dto;
+namespace Courstick.Core.Dto;
 
 public class CourseDto
 {

@@ -2,6 +2,7 @@ using Courstick.Core.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using Courstick.Core.Dto;
 using Courstick.Dto;
 using Courstick.Infrastructure;
 using Microsoft.AspNetCore.Authorization;

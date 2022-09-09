@@ -17,14 +17,17 @@ namespace Courstick.Infrastructure
         public DbSet<Tag> Tags { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
-            : base(options) { }
+            : base(options)
+        {
+            Database.EnsureCreated();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Course>().HasMany(c => c.Author).WithMany(c => c.AuthorOf).UsingEntity("AuthorOfCourse");
             modelBuilder.Entity<Course>().HasMany(c => c.Users).WithMany(c => c.Courses).UsingEntity("UserAndCourse");
-            
-            base.OnModelCreating(modelBuilder);
         }
     }
 
